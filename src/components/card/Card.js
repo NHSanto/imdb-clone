@@ -1,24 +1,24 @@
 import React, {useEffect, useState} from "react";
 import "./Card.css";
-import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import {Link} from "react-router-dom";
 
 const Card = ({movie}) => {
-    console.log(movie);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        setTimeout(() =>{
+        setTimeout(() => {
             setIsLoading(false)
         }, 1500)
-    },[])
+    }, [])
+
     return <>
         {
             isLoading
                 ?
                 <div className="cards">
                     <SkeletonTheme color="#202020" highlightColor="#444">
-                        <Skeleton height={300} duration={3} enableAnimation={true}/>
+                        <Skeleton height={300} duration={2} />
                     </SkeletonTheme>
                 </div>
                 :
